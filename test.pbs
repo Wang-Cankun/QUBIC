@@ -1,0 +1,12 @@
+#!/bin/bash
+#PBS -q batch2
+#PBS -l walltime=02:00:00
+# To request a single node with 12 core
+#PBS -l nodes=12:ppn=12
+
+date
+export LD_LIBRARY_PATH=/shared/bio/gcc/gcc-4.9.2/lib64/:$LD_LIBRARY_PATH
+module load bio/gcc/4.9.2
+cd /home/wangc/qubic
+time ./qubic -i Pollen  -F -R > Pollen_result
+date 

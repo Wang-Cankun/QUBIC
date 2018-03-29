@@ -1,0 +1,25 @@
+#PBS -S /bin/bash
+#PBS -q batch
+#PBS -N PollenMP
+#PBS -l walltime=12:00:00
+#PBS -M cankun.wang@sdstate.edu
+# To request a single node with 12 core
+#PBS -l nodes=1:ppn=12
+#PBS -l mem=8gb
+#The environment variable $PBS_O_WORKDIR specify the directory from which you submitted the job
+
+#PBS -m abe
+set -x
+# move to working directory
+# test KL_based biclustering(qubic2.1.7) on quantile discretized data using different parameters
+echo
+echo "Job ID: $PBS_JOBID"
+echo "Queue: $PBS_QUEUE"
+echo "Cores: $PBS_NP"
+echo "Nodes: $(cat $PBS_NODEFILE | sort -u | tr '\n' ' ')"
+echo "mpirun: $(which mpirun)"
+echo
+
+module load gcc
+cd /home/maqin/cankun
+mpirun ./qubic -i ./Pollen -F -R > outputfile

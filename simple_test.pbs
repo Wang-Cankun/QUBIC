@@ -1,0 +1,10 @@
+#!/bin/bash
+#PBS -q batch2
+#PBS -l walltime=0:01:00
+# To request a single node with 12 core
+#PBS -l nodes=16:ppn=16
+date
+module load bio/gcc
+cd /home/wangc/qubic
+time ./qubic -i ./data/example -F -R > outputfile
+date
