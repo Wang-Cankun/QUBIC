@@ -606,6 +606,7 @@ static void print_params(FILE *fw) {
   strcpy(filedesc, "continuous");
   if (po->IS_DISCRETE)
     strcpy(filedesc, "discrete");
+  //double VER = 2.2;
   fprintf(fw, "# QUBIC version %.1f output\n", VER);
   fprintf(fw, "# Datafile %s: %s type\n", po->FN, filedesc);
   fprintf(fw, "# Parameters: -k %d -f %.2f -c %.2f -o %zu", po->COL_WIDTH,

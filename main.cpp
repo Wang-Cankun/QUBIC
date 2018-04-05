@@ -16,6 +16,7 @@
 int main(const int argc, char *argv[]) {
   /* Start the timer */
   uglyTime(NULL);
+  //double VER = 2.21;
   printf("\nQUBIC %.1f: greedy biclustering (compiled " __DATE__ " " __TIME__
          ")\n\n",
          VER);

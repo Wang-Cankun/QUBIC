@@ -1,33 +1,11 @@
 {
+    "taskName":"Makefile",
     "version": "0.1.0",
-    "command": "make",
+    "command": "g++",
     "isShellCommand": true,
-    "tasks": [
-        {
-            "taskName": "Makefile",
-
-            // Make this the default build command.
-            "isBuildCommand": true,
-
-            // Show the output window only if unrecognized errors occur.
-            "showOutput": "always",
-
-            // No args
-            "args": ["all"],
-
-            // Use the standard less compilation problem matcher.
-            "problemMatcher": {
-                "owner": "cpp",
-                "fileLocation": ["relative", "${workspaceRoot}"],
-                "pattern": {
-                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-                    "file": 1,
-                    "line": 2,
-                    "column": 3,
-                    "severity": 4,
-                    "message": 5
-                }
-            }
-        }
-    ]
+    // compiles and links with debugger information
+    "args": ["-g","-o","qubic","-D","VER=0.2","-Wall","-lm","-ansi","-std=c++0x","-fopenmp","struct.cpp"," read_array.cpp"," make_graph.cpp"," get_options.cpp"," write_block.cpp"," cluster.cpp"," main.cpp"," expand.cpp"],
+    // without debugger information
+    // "args": ["-o", "hello.exe", "hello.cpp"],
+    "showOutput": "always"
 }
